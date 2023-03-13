@@ -15,7 +15,7 @@ const { useState, useEffect } = React;
 export default function App() {
 
   const [pokemons, setPokemons] = useState([]);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(0);
   const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(true);
   const [favorites, setFavorites] = useState([]);
@@ -25,7 +25,7 @@ export default function App() {
       try {
         setLoading(true);
 
-        const data = await getPokemons(25, 25 * page);
+        const data = await getPokemons(27, 27 * page);
 
         const promises = data.results.map(async (pokemon) => {
           return await getPokemonData(pokemon.url);
@@ -35,7 +35,7 @@ export default function App() {
 
         setPokemons(results);
         setLoading(false);
-        setTotal(Math.ceil(data.count / 25))
+        setTotal(Math.ceil(data.count / 27))
       } catch (err) {
 
       }
