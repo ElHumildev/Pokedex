@@ -11,11 +11,11 @@ const Navbar = () => {
 
   return (
     <nav>
-      <div />
+     <div className="nav-radius"><div className="nav-circle"><div className="nav-circle-circle"></div></div></div>
       <div>
         <img src={imgUrl} alt="pokeapi-logo" className="navbar-image" />
       </div>
-      <div>&#10084;&#65039; {favoritePokemons.length}</div>
+      <div className="hearth">&#128153; {favoritePokemons.length}</div>
     </nav>
   );
 };
